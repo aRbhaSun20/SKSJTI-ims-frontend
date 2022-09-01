@@ -1,10 +1,4 @@
-import {
-  Add,
-  Delete,
-  Download,
-  Edit,
-  KeyboardArrowRight,
-} from "@mui/icons-material";
+import { Add, Delete, Download, Edit } from "@mui/icons-material";
 import {
   IconButton,
   Paper,
@@ -17,12 +11,16 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../../components/shared/Popup";
+import AddBatch from "./Popups/AddBatch";
 import "./settings.css";
 
 const TABLE_HEADERS = ["Year", "Course Name", "Department Name"];
 
 function BatchTable() {
+  const [addBatch, setAddBatch] = useState(false);
+
   return (
     <Paper className="table-details" elevation={3}>
       <div className="table-header">
@@ -33,7 +31,7 @@ function BatchTable() {
               <Download />
             </Tooltip>
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => setAddBatch(true)}>
             <Tooltip arrow title="Add new Batch">
               <Add />
             </Tooltip>
@@ -62,7 +60,14 @@ function BatchTable() {
             <IndiRows />
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer>{" "}
+      <Popup
+        open={addBatch}
+        title="Add Batch"
+        setOpen={setAddBatch}
+      >
+        <AddBatch setOpen={setAddBatch} />
+      </Popup>
     </Paper>
   );
 }
@@ -81,9 +86,6 @@ const IndiRows = ({ data = {} }) => {
         </IconButton>
         <IconButton>
           <Delete />
-        </IconButton>
-        <IconButton>
-          <KeyboardArrowRight />
         </IconButton>
       </TableCell>
     </TableRow>

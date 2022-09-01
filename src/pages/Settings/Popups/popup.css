@@ -1,0 +1,27 @@
+.popup-body-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.popup-body-cont .popup-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.popup-body-cont .popup-but {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.popup-body-cont .popup-but .but {
+  padding: 0.5rem 2rem;
+  background: red;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+.popup-body-cont .popup-but .submit {
+  background: blue;
+}/*# sourceMappingURL=popup.css.map */

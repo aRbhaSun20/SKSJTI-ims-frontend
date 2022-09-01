@@ -1,0 +1,27 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  min-width: 30rem;
+  min-height: 20rem;
+}
+.popup .popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7e7e7;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1rem;
+}
+.popup .popup-header .title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.popup .popup-body {
+  padding: 1.5rem;
+}/*# sourceMappingURL=shared.css.map */

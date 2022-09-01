@@ -1,10 +1,4 @@
-import {
-  Add,
-  Delete,
-  Download,
-  Edit,
-  KeyboardArrowRight,
-} from "@mui/icons-material";
+import { Add, Delete, Download, Edit } from "@mui/icons-material";
 import {
   IconButton,
   Paper,
@@ -17,12 +11,16 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../../components/shared/Popup";
+import AddDepartment from "./Popups/AddDepartment";
 import "./settings.css";
 
 const TABLE_HEADERS = ["Name", "Hod", "Course Name"];
 
 function DepartmentTable() {
+  const [addDepartment, setAddDepartment] = useState(false);
+
   return (
     <Paper className="table-details" elevation={3}>
       <div className="table-header">
@@ -33,7 +31,7 @@ function DepartmentTable() {
               <Download />
             </Tooltip>
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => setAddDepartment(true)}>
             <Tooltip arrow title="Add new Department">
               <Add />
             </Tooltip>
@@ -63,6 +61,13 @@ function DepartmentTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <Popup
+        open={addDepartment}
+        title="Add Department"
+        setOpen={setAddDepartment}
+      >
+        <AddDepartment setOpen={setAddDepartment} />
+      </Popup>
     </Paper>
   );
 }
@@ -81,9 +86,6 @@ const IndiRows = ({ data = {} }) => {
         </IconButton>
         <IconButton>
           <Delete />
-        </IconButton>
-        <IconButton>
-          <KeyboardArrowRight />
         </IconButton>
       </TableCell>
     </TableRow>
