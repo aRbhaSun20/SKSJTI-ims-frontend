@@ -1,0 +1,194 @@
+.home-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+
+  .right-bar {
+    display: flex;
+    flex-direction: column;
+    background: #f2f2fd;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 29%;
+    transition: all 0.35s ease;
+    position: relative;
+
+    .MuiPickerStaticWrapper-content {
+      border-radius: 1rem;
+    }
+    .todos {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+      justify-content: flex-start;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+
+      .title {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .indi-todo-cont {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        .indi-todo {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          text-align: justify;
+
+          .todo-but {
+            background-color: #e3e5f5;
+            padding: 12px;
+            border-radius: 1rem;
+          }
+        }
+        .todo-checklist {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+
+      .todo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        max-height: 23rem;
+        overflow: overlay;
+      }
+    }
+
+    .expand {
+      position: absolute;
+      top: 5%;
+      background: white;
+      left: -5%;
+      z-index: 1000;
+      border: 1px solid #dddddd;
+    }
+  }
+
+  .expanded {
+    width: 0% !important;
+    padding: 1rem !important;
+
+    transition: all 0.35s ease;
+
+    .MuiPickerStaticWrapper-root {
+      display: none !important;
+      transition: all 0.75s ease;
+      opacity: 0 !important;
+    }
+    .todos {
+      display: none !important;
+      opacity: 0 !important;
+      transition: all 1s ease;
+    }
+    .expand {
+      left: -50% !important;
+    }
+  }
+
+  .left-bar {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: flex-start;
+    gap: 0.5rem;
+    .tab-left {
+      text-transform: capitalize;
+      font-size: 1.1rem;
+    }
+    .person-card-collect {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-flow: row wrap;
+      transition: width 0.5s ease;
+      overflow: overlay;
+      max-height: 45rem;
+      //   justify-content: space-between;
+      .indi-card {
+        padding: 1rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 24rem;
+        gap: 1rem;
+
+        .top-layer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .top-left {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            text-align: justify;
+            .name {
+              font-size: 1.2rem;
+            }
+            .email {
+              font-size: 0.85rem;
+            }
+          }
+        }
+
+        .details {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          gap: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid #e7e7e7;
+          .indi-det {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            .indi-det-title {
+              color: #747474;
+              text-transform: uppercase;
+            }
+            .indi-det-value {
+              color: #3a3a3a;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              text-transform: capitalize;
+              &:nth-of-type(1) {
+                text-transform: uppercase;
+              }
+              svg {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+
+        .but-indi {
+          background: black;
+          padding: 0.75rem;
+          display: flex;
+          gap: 1rem;
+          font-weight: bold;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .expanded-lt {
+    width: 99% !important;
+  }
+}

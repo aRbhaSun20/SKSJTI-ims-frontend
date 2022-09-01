@@ -1,0 +1,176 @@
+.home-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.home-main .right-bar {
+  display: flex;
+  flex-direction: column;
+  background: #f2f2fd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 29%;
+  transition: all 0.35s ease;
+  position: relative;
+}
+.home-main .right-bar .MuiPickerStaticWrapper-content {
+  border-radius: 1rem;
+}
+.home-main .right-bar .todos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.home-main .right-bar .todos .title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-main .right-bar .todos .indi-todo-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.home-main .right-bar .todos .indi-todo-cont .indi-todo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-align: justify;
+}
+.home-main .right-bar .todos .indi-todo-cont .indi-todo .todo-but {
+  background-color: #e3e5f5;
+  padding: 12px;
+  border-radius: 1rem;
+}
+.home-main .right-bar .todos .indi-todo-cont .todo-checklist {
+  display: flex;
+  gap: 1rem;
+}
+.home-main .right-bar .todos .todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-height: 23rem;
+  overflow: overlay;
+}
+.home-main .right-bar .expand {
+  position: absolute;
+  top: 5%;
+  background: white;
+  left: -5%;
+  z-index: 1000;
+  border: 1px solid #dddddd;
+}
+.home-main .expanded {
+  width: 0% !important;
+  padding: 1rem !important;
+  transition: all 0.35s ease;
+}
+.home-main .expanded .MuiPickerStaticWrapper-root {
+  display: none !important;
+  transition: all 0.75s ease;
+  opacity: 0 !important;
+}
+.home-main .expanded .todos {
+  display: none !important;
+  opacity: 0 !important;
+  transition: all 1s ease;
+}
+.home-main .expanded .expand {
+  left: -50% !important;
+}
+.home-main .left-bar {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.home-main .left-bar .tab-left {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.home-main .left-bar .person-card-collect {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-flow: row wrap;
+  transition: width 0.5s ease;
+  overflow: overlay;
+  max-height: 45rem;
+}
+.home-main .left-bar .person-card-collect .indi-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+  gap: 1rem;
+}
+.home-main .left-bar .person-card-collect .indi-card .top-layer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-main .left-bar .person-card-collect .indi-card .top-layer .top-left {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: justify;
+}
+.home-main .left-bar .person-card-collect .indi-card .top-layer .top-left .name {
+  font-size: 1.2rem;
+}
+.home-main .left-bar .person-card-collect .indi-card .top-layer .top-left .email {
+  font-size: 0.85rem;
+}
+.home-main .left-bar .person-card-collect .indi-card .details {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e7e7e7;
+}
+.home-main .left-bar .person-card-collect .indi-card .details .indi-det {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-main .left-bar .person-card-collect .indi-card .details .indi-det .indi-det-title {
+  color: #747474;
+  text-transform: uppercase;
+}
+.home-main .left-bar .person-card-collect .indi-card .details .indi-det .indi-det-value {
+  color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+.home-main .left-bar .person-card-collect .indi-card .details .indi-det .indi-det-value:nth-of-type(1) {
+  text-transform: uppercase;
+}
+.home-main .left-bar .person-card-collect .indi-card .details .indi-det .indi-det-value svg {
+  font-size: 1rem;
+}
+.home-main .left-bar .person-card-collect .indi-card .but-indi {
+  background: black;
+  padding: 0.75rem;
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.home-main .expanded-lt {
+  width: 99% !important;
+}/*# sourceMappingURL=Home.css.map */

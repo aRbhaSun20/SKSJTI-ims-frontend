@@ -1,0 +1,36 @@
+.simple-tabpanel-settings {
+  width: 100%;
+  .table-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+
+    .table-header {
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+      padding: 1rem;
+      background-color: #e7e7e7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-row{
+        display: grid;
+        grid-template-columns: repeat(7,1fr) 1.3fr;
+
+        .Actions{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .dept{
+        grid-template-columns: repeat(3,1fr) 1.3fr;
+
+    }
+  }
+}
