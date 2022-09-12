@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   width: auto;
   border: 2px solid #000;
-  border-radius: 1rem;
+  border-radius: 1rem !important;
   min-width: 30rem;
   min-height: 20rem;
 }

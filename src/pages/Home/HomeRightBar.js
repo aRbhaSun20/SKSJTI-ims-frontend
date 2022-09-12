@@ -13,7 +13,7 @@ function HomeRightBar() {
   const runTime = useSelector((state) => state.runTime);
   const dispatch = useDispatch();
 
-  const [value, setValue] = useState(DateTime.now());
+  const [value, setValue] = useState(() => DateTime.now());
 
   const handleModeChange = () => {
     dispatch({
@@ -23,7 +23,7 @@ function HomeRightBar() {
   };
 
   return (
-    <div className={`right-bar ${runTime.toggleMode? "expanded":""}`}>
+    <div className={`right-bar ${runTime.toggleMode ? "expanded" : ""}`}>
       <LocalizationProvider dateAdapter={AdapterLuxon}>
         <StaticDatePicker
           orientation="portrait"

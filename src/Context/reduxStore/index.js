@@ -1,4 +1,4 @@
-import { QueryClient } from "@tanstack/react-query";
+import { QueryClient } from "react-query";
 import { combineReducers, createStore } from "redux";
 import { RunTimeReducers } from "./RunTimeStates";
 import { UserReducers } from "./UserReducers";

@@ -1,11 +1,40 @@
 import { CalendarMonth, Mail, Phone } from "@mui/icons-material";
 import { Chip, Typography } from "@mui/material";
-import React from "react";
+import React, { useCallback, useMemo } from "react";
+import { useIndividualProfessor } from "../../Context/reactQuery/ProfessorContext";
 import PersonelDetails from "./PersonelDetails";
 import ProfessionalDetails from "./ProfessionalDetails";
 import "./professor.css";
 
 function DetailsBar() {
+  const getParams = useCallback((key) => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(key);
+  }, []);
+
+  const idParam = useMemo(() => {
+    const requiredId = getParams("_id");
+    return requiredId;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const { ProfessorData } = useIndividualProfessor(
+    `  _id
+  name
+  email
+  kgId
+  designation
+  department {
+    name
+  }
+  phone{
+    permanent
+  }
+  appointType
+  password`,
+    idParam
+  );
+
   return (
     <div className="details-cont">
       <div className="top-cont-det">

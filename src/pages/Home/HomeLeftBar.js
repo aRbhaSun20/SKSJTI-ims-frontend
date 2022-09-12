@@ -3,8 +3,24 @@ import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import PersonCard from "./PersonCard";
 import "./Home.css";
+import { useProfessor } from "../../Context/reactQuery/ProfessorContext";
 
 function HomeLeftBar() {
+  const { ProfessorData } = useProfessor(`
+  _id
+  name
+  email
+  kgId
+  designation
+  department {
+    name
+  }
+  phone{
+    permanent
+  }
+  appointType
+  password`);
+
   const runTime = useSelector((state) => state.runTime);
   const [tabValue, setTabValue] = useState(0);
   const handleChange = (e, newValue) => {
@@ -40,17 +56,17 @@ function HomeLeftBar() {
         ))}
       </Tabs>
       <div className="person-card-collect">
-        {new Array(10).fill("").map((ele, i) => (
+        {ProfessorData?.facultys?.map((ele, i) => (
           <PersonCard
             key={i}
-            name="Arbhasun Banerjee"
-            email="demo@demo.com"
-            kgId="kgId1020"
-            position="Lecturer"
-            department="Physics"
-            phone="04020-30403"
-            type="Contract"
-            path={`/professor?kgId=kgId1020`}
+            name={ele?.name}
+            email={ele?.email}
+            kgId={ele?.kgId}
+            position={ele?.designation}
+            department={ele?.department?.name}
+            phone={ele?.phone?.permanent}
+            type={ele?.appointType}
+            path={`/professor?_id=${ele?._id}`}
           />
         ))}
       </div>

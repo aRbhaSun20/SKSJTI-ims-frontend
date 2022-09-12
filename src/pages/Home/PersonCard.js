@@ -23,16 +23,21 @@ function PersonCard({
   path,
 }) {
   const navigate = useNavigate();
-  
+
   const handleProfessorDetails = () => {
     navigate(path);
   };
+
+  const firstLetter = useMemo(() => {
+    if (name) return name[0].toUpperCase();
+    return "";
+  }, [name]);
 
   return (
     <Paper elevation={3} className="indi-card">
       <div className="top-layer">
         <div className="top-left">
-          <Avatar sx={{ bgcolor: deepPurple[500] }}>A</Avatar>
+          <Avatar sx={{ bgcolor: deepPurple[500] }}>{firstLetter}</Avatar>
           <div>
             <Typography variant="h6" className="name">
               <b>{name}</b>

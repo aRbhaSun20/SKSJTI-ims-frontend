@@ -17,7 +17,9 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../../components/shared/Popup";
+import AddStudent from "./Popups/AddStudent";
 import "./settings.css";
 
 const TABLE_HEADERS = [
@@ -31,6 +33,7 @@ const TABLE_HEADERS = [
 ];
 
 function StudentTable() {
+  const [addStudent, setAddStudent] = useState(false);
   return (
     <Paper className="table-details" elevation={3}>
       <div className="table-header">
@@ -41,7 +44,7 @@ function StudentTable() {
               <Download />
             </Tooltip>
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => setAddStudent(true)}>
             <Tooltip arrow title="Add new Student">
               <Add />
             </Tooltip>
@@ -71,6 +74,13 @@ function StudentTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <Popup
+        open={addStudent}
+        title="Add Student"
+        setOpen={setAddStudent}
+      >
+        <AddStudent setOpen={setAddStudent} />
+      </Popup>
     </Paper>
   );
 }

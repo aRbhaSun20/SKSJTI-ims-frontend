@@ -60,7 +60,7 @@ function BatchTable() {
             <IndiRows />
           </TableBody>
         </Table>
-      </TableContainer>{" "}
+      </TableContainer>
       <Popup
         open={addBatch}
         title="Add Batch"

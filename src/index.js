@@ -4,9 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "react-query";
 import { dataStore, queryClient } from "./Context/reduxStore";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
